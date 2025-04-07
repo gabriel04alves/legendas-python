@@ -1,5 +1,11 @@
+
+*.mp3
+*.mp4
+
 # Created by https://www.toptal.com/developers/gitignore/api/python
 # Edit at https://www.toptal.com/developers/gitignore?templates=python
+
+*.srt
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
