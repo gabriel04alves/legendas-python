@@ -7,7 +7,7 @@ def apply_subtitle(video_path, subtitle_path, output_path):
         "-i",
         video_path,
         "-vf",
-        f"subtitles={subtitle_path}:force_style='Fontsize=18'",
+        f"subtitles={subtitle_path}:force_style='Fontsize=15'",
         "-c:a",
         "copy",
         output_path,
