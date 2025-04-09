@@ -6,7 +6,13 @@ LegendaIA é uma aplicação web que permite gerar legendas automaticamente para
 
 ## Funcionalidades
 
-- Upload de vídeos no formato MP4ador -
+- Upload de vídeos no formato MP4
+- Download de vídeos a partir de URLs de plataformas populares:
+  - YouTube
+  - Instagram
+  - Facebook
+  - Twitter/X
+  - TikTok
 - Extração automática do áudio
 - Transcrição do áudio usando IA (Groq API)
 - Aprimoramento do texto das legendas
@@ -22,6 +28,7 @@ LegendaIA é uma aplicação web que permite gerar legendas automaticamente para
 - FFmpeg (processamento de áudio e vídeo)
 - Docker (containerização)
 - PyDub (processamento de áudio)
+- yt-dlp (download de vídeos de plataformas online)
 
 ## Instalação
 
@@ -35,7 +42,7 @@ LegendaIA é uma aplicação web que permite gerar legendas automaticamente para
 1. Clone o repositório:
 
    ```bash
-   git clone https://github.com/gabriel04alves/LegendaIA.git
+   git clone git@github.com:gabriel04alves/legendas-python.git
    cd LegendaIA
    ```
 
@@ -97,7 +104,9 @@ LegendaIA é uma aplicação web que permite gerar legendas automaticamente para
 ## Como Usar
 
 1. Acesse a aplicação web
-2. Faça upload de um vídeo no formato MP4
+2. Escolha entre fazer upload de um vídeo ou fornecer uma URL de vídeo
+   - Para upload: Selecione um arquivo no formato MP4
+   - Para URL: Cole o link de uma plataforma suportada (YouTube, Instagram, Facebook, Twitter/X, TikTok)
 3. Aguarde o processamento (extração de áudio, transcrição, melhoria do texto e aplicação de legendas)
 4. Visualize o vídeo com legendas
 5. Faça o download do vídeo legendado
@@ -110,14 +119,18 @@ LegendaIA/
 │   ├── __init__.py
 │   ├── apply_subtitle.py     # Aplicação de legendas ao vídeo
 │   ├── audio_processing.py   # Extração de áudio
+│   ├── file_download.py      # Download de vídeos a partir de URLs
 │   ├── format_srt_time.py    # Formatação do tempo para SRT
 │   ├── srt_create.py         # Criação do arquivo SRT
 │   ├── text_improve.py       # Melhoria do texto das legendas
 │   └── transcription.py      # Transcrição do áudio
-├── app.py                    # Aplicação Streamlit
-├── Dockerfile                # Configuração do Docker
-├── .env                      # Variáveis de ambiente (não versionado)
-└── README.md                 # Documentação
+├── ui/
+│   ├── __init__.py
+│   └── app.py               # Lógica da aplicação Streamlit
+├── main.py                  # Entrada principal da aplicação
+├── Dockerfile               # Configuração do Docker
+├── .env                     # Variáveis de ambiente (não versionado)
+└── README.md                # Documentação
 ```
 
 ## Variáveis de Ambiente

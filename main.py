@@ -2,8 +2,8 @@ import streamlit as st
 from ui.app import app
 
 st.set_page_config(
-    page_title="LegendaIA",
-    page_icon="🎤",
+    page_title="Legendar com IA",
+    page_icon="🎥",
     layout="centered",
     initial_sidebar_state="auto",
 )
