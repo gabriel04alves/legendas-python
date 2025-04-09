@@ -120,15 +120,15 @@ LegendaIA/
 └── README.md                 # Documentação
 ```
 
-## 🔑 Variáveis de Ambiente
+## Variáveis de Ambiente
 
 - `GROQ_API_KEY`: Chave de API para acessar os serviços da Groq
 
-## 📄 Licença
+## Licença
 
 Este projeto está licenciado sob a licença MIT - consulte o arquivo LICENSE para obter detalhes.
 
-## 👨‍💻 Contribuindo
+## Contribuindo
 
 Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull requests.
 
