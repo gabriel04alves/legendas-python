@@ -1,5 +1,6 @@
 import streamlit as st
 import re
+import os
 from app.audio_processing import extract_audio
 from app.transcription import transcribe_audio
 from app.text_improve import improve_text
@@ -7,7 +8,7 @@ from app.srt_create import create_srt
 from app.apply_subtitle import apply_subtitle
 
 st.set_page_config(
-    page_title="Legendador",
+    page_title="LegendaIA",
     page_icon="🎤",
     layout="centered",
     initial_sidebar_state="auto",
@@ -45,8 +46,19 @@ if uploaded_video:
 
     st.success("Legendas geradas e aplicadas com sucesso!")
 
-    st.header("Baixe o vídeo")
-    st.download_button("Download file", output_video_path)
+    with open(output_video_path, "rb") as f:
+        video_bytes = f.read()
+        st.download_button(
+            label="Download do vídeo",
+            data=video_bytes,
+            file_name=f"{sanitized_name}_com_legenda.mp4",
+            mime="video/mp4",
+        )
 
     st.write("Assista o conteúdo gerado:")
     st.video(output_video_path)
+
+    os.remove(output_video_path)
+    os.remove(extracted_audio_path)
+    os.remove(input_video_path)
+    os.remove(output_srt_path)
