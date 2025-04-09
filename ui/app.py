@@ -8,18 +8,8 @@ from app.text_improve import improve_text
 from app.srt_create import create_srt
 from app.apply_subtitle import apply_subtitle
 
-st.set_page_config(
-    page_title="LegendaIA",
-    page_icon="🎤",
-    layout="centered",
-    initial_sidebar_state="auto",
-)
 
-st.title("Gerador de Legendas")
-
-uploaded_video = st.file_uploader("Faça upload de um vídeo", type=["mp4"])
-
-if uploaded_video:
+def app(uploaded_video):
     with tempfile.TemporaryDirectory() as temp_dir:
         sanitized_name = re.sub(r"[^\w\-_.]", "_", uploaded_video.name)
         input_video_path = os.path.join(temp_dir, sanitized_name)
