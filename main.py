@@ -10,7 +10,13 @@ st.set_page_config(
 
 st.title("Gerador de Legendas")
 
-uploaded_video = st.file_uploader("Faça upload de um vídeo", type=["mp4"])
+input_type = st.radio("Escolha o tipo de input:", ("URL do vídeo", "Upload de vídeo"))
+
+uploaded_video = (
+    st.text_input("Digite a URL do vídeo:")
+    if input_type == "URL do vídeo"
+    else st.file_uploader("Faça upload de um vídeo", type=["mp4"])
+)
 
 if uploaded_video:
     app(uploaded_video)
