@@ -2,7 +2,7 @@ FROM python:3.11
 
 RUN apt-get update && apt-get install -y ffmpeg
 
-RUN pip install streamlit hf_xet ffmpeg pydub requests python-dotenv groq libass
+RUN pip install streamlit hf_xet ffmpeg pydub requests python-dotenv groq
 
 WORKDIR /app
 
