@@ -20,10 +20,10 @@ uploaded_video = st.file_uploader("Faça upload de um vídeo", type=["mp4"])
 
 if uploaded_video:
     sanitized_name = re.sub(r"[^\w\-_.]", "_", uploaded_video.name)
-    input_video_path = f"/app/{sanitized_name}"
-    extracted_audio_path = "/app/audio.mp3"
-    output_srt_path = "/app/legendas.srt"
-    output_video_path = f"/app/{sanitized_name}_com_legenda.mp4"
+    input_video_path = f"{sanitized_name}"
+    extracted_audio_path = "audio.mp3"
+    output_srt_path = "legendas.srt"
+    output_video_path = f"{sanitized_name}_com_legenda.mp4"
 
     with open(input_video_path, "wb") as f:
         f.write(uploaded_video.read())
