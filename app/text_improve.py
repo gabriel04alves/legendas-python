@@ -1,3 +1,4 @@
+import streamlit as st
 import os
 import requests
 from dotenv import load_dotenv
@@ -34,5 +35,10 @@ def improve_text(text):
     response = requests.post(
         "https://api.groq.com/openai/v1/chat/completions", headers=headers, json=body
     )
+    data = response.json()
 
-    return response.json()["choices"][0]["message"]["content"]
+    if "choices" in data and data["choices"]:
+        return data["choices"][0]["message"]["content"]
+    else:
+        st.error(f"Erro na API Groq: {data}")
+        raise RuntimeError(f"Erro na API Groq: {data}")
