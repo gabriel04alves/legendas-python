@@ -13,7 +13,7 @@ def improve_text(text):
     }
 
     body = {
-        "model": "qwen-2.5-32b",
+        "model": "gemma2-9b-it",
         "messages": [
             {
                 "role": "system",
